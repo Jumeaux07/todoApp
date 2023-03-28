@@ -27,28 +27,18 @@ class DialogBox extends StatelessWidget {
                 hintText: "Ajouter une nouvelle tâche"
               ),
             ),
-            InkWell(
-              onTap:onNewTime,
-              child: Row(
-                children: [
-                  Icon(Icons.timelapse),
-                  Text("Temps: ${newTime}"),
-                ],
-              )
-            ),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
             //boutton annuler
             IconButton(onPressed: onCancel, icon: Icon(Icons.cancel)),
             //boutton sauvegarde
-            IconButton(onPressed: onCancel, icon: Icon(Icons.save)),
+            IconButton(onPressed: onSave, icon: Icon(Icons.save)),
               ],
             )
           ],
         ),
-        height: 200,
+        height: 130,
       ),
     );
   }

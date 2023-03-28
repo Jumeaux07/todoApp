@@ -33,12 +33,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   void enregisterTache() {
-    setState(() {
-      db.ToDoList.add([_controller.text, false, newTimes]);
-    });
-    db.updateData();
-    _controller.clear();
-    Navigator.of(context).pop();
+    if (_controller.text != "" ) {
+      setState(() {
+        db.ToDoList.add([_controller.text, false, newTimes]);
+      });
+      db.updateData();
+      _controller.clear();
+      Navigator.of(context).pop();
+    }else{
+      Navigator.of(context).pop();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Aucune tache ajoutée")));
+    }
+    
   }
 
   void ajouterTache() {
